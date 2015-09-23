@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" ng-app="testApp">
+<head>
+<title>ng-src ｜ 链接与图片模板</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css"
+ href="js/Plugins/bootstrap/css/bootstrap.css">
+<script src="js/Plugins/angularjs/angular.min.js"></script>
+<script src="js/NoteApp/App/controllers.js"></script>
+</head>
+<body class="container" ng-controller="testCtrl">
+ <hr />
+ 搜索:
+ <input ng-model="query"> 排序:
+ <select ng-model="orderProp">
+  <option value="name">姓名</option>
+  <option value="tel">电话</option>
+  <option value="add">地址</option>
+ </select>
+ <a href=" http://www.ituring.com.cn/article/15766">源文件参考</a>
+ <hr />
+ <ul class="phones">
+  <table class="table">
+   <thead>
+    <tr>
+     <th>姓名</th>
+     <th>電話</th>
+     <th>地址</th>
+     <th>圖</th>
+    </tr>
+   </thead>
+   <tr class="table table-striped"
+    ng-repeat="data in testDatas | filter:query | orderBy:orderProp">
+    <td><a href="#">{{data.name}} </a></td>
+    <td>{{data.tel}}</td>
+    <td>{{data.add}}</td>
+    <td><img ng-src="{{data.imageUrl}}"></td>
+   </tr>
+  </table>
+
+ </ul>
+ <hr />
+ <h2>ng-src</h2>
+ 将
+ <code>ng-src</code>
+ 指令换成普通的
+ <code>src</code>
+ 属性。用像Firebug，Chrome Web Inspector这样的工具，
+ <br />或者直接去看服务器的访问日志， 你会发现你的应用向
+ <code>/app/%7B%7Bphone.imageUrl%7D%7D</code>
+ （或者/app/{{phone.imageUrl}}）发送了一个非法请求
+ <br />这个问题是由于浏览器会在遇到
+ <code>img</code>
+ 标签的时候立刻向还未得到编译的URL地址发送一个请求，
+ <br /> AngularJS只有在页面载入完毕后才开始编译表达式从而得到正确的图片URL地址。
+
+ <hr />
+ <h2>data.splice(0, 5)</h2>
+ <code> $scope.testDatas = data.splice(0, 5);</code>
+ //只顯示前５個
+ <br />
+ <code> $scope.testDatas = data;</code>
+ //顯示所有
+</body>
+</html>
