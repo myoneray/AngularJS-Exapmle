@@ -2,16 +2,16 @@
 
 /* Controllers */
 
-var controllers = angular.module('controllers', []);
+var testControllers = angular.module('testControllers', []);
 
-controllers.controller('listCtrl', [ '$scope', '$http',
+testControllers.controller('listCtrl', [ '$scope', '$http',
 		function($scope, $http) {
 			$http.get('json/app.json').success(function(data) {
 				$scope.testDatas = data;
 			});
 			$scope.orderProp = 'add';
 		} ]);
-controllers.controller('detailCtrl', [
+testControllers.controller('detailCtrl', [
 		'$scope',
 		'$routeParams',
 		'$http',

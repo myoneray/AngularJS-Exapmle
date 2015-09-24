@@ -1,6 +1,6 @@
 'use strict';
 var testApp = angular.module('testApp', [ 'ngRoute',
-		'controllers' ]);
+		'testControllers' ,'testFilters']);
 testApp.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/list', {
 		templateUrl : 'html/index-list.html',

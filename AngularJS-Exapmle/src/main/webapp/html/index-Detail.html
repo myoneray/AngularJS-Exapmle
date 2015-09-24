@@ -2,34 +2,117 @@
  <hr />
  详情
  <hr />
- <p>{{temp.description}}</p>
+<h1>{{temp.name}}</h1>
 
- <ul class="temp-thumbs">
-  <li ng-repeat="img in temp.images"><img ng-src="{{img}}"></li>
- </ul>
+<p>{{temp.description}}</p>
 
- <ul class="specs">
-  <li><span>Availability and Networks</span>
-   <dl>
-    <dt>Availability</dt>
-    <dd ng-repeat="availability in temp.availability">{{availability}}</dd>
-   </dl></li>
-  <li><span>Battery</span>
-   <dl>
-    <dt>Type</dt>
-    <dd>{{temp.battery.type}}</dd>
-    <dt>Talk Time</dt>
-    <dd>{{temp.battery.talkTime}}</dd>
-    <dt>Standby time (max)</dt>
-    <dd>{{temp.battery.standbyTime}}</dd>
-   </dl></li>
-  <li><span>Storage and Memory</span>
-   <dl>
-    <dt>RAM</dt>
-    <dd>{{temp.storage.ram}}</dd>
-    <dt>Internal Storage</dt>
-    <dd>{{temp.storage.flash}}</dd>
-   </dl></li>
+<ul class="temp-thumbs">
+  <li ng-repeat="img in temp.images">
+    <img ng-src="{{img}}">
+  </li>
+</ul>
+
+<ul class="specs">
   <li>
+    <span>Availability and Networks</span>
+    <dl>
+      <dt>Availability</dt>
+      <dd ng-repeat="availability in temp.availability">{{availability}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Battery</span>
+    <dl>
+      <dt>Type</dt>
+      <dd>{{temp.battery.type}}</dd>
+      <dt>Talk Time</dt>
+      <dd>{{temp.battery.talkTime}}</dd>
+      <dt>Standby time (max)</dt>
+      <dd>{{temp.battery.standbyTime}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Storage and Memory</span>
+    <dl>
+      <dt>RAM</dt>
+      <dd>{{temp.storage.ram}}</dd>
+      <dt>Internal Storage</dt>
+      <dd>{{temp.storage.flash}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Connectivity</span>
+    <dl>
+      <dt>Network Support</dt>
+      <dd>{{temp.connectivity.cell}}</dd>
+      <dt>WiFi</dt>
+      <dd>{{temp.connectivity.wifi}}</dd>
+      <dt>Bluetooth</dt>
+      <dd>{{temp.connectivity.bluetooth}}</dd>
+      <dt>Infrared</dt>
+      <dd>{{temp.connectivity.infrared | filtersName}}</dd>
+      <dt>GPS</dt>
+      <dd>{{temp.connectivity.gps | filtersName}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Android</span>
+    <dl>
+      <dt>OS Version</dt>
+      <dd>{{temp.android.os}}</dd>
+      <dt>UI</dt>
+      <dd>{{temp.android.ui}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Size and Weight</span>
+    <dl>
+      <dt>Dimensions</dt>
+      <dd ng-repeat="dim in temp.sizeAndWeight.dimensions">{{dim}}</dd>
+      <dt>Weight</dt>
+      <dd>{{temp.sizeAndWeight.weight}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Display</span>
+    <dl>
+      <dt>Screen size</dt>
+      <dd>{{temp.display.screenSize}}</dd>
+      <dt>Screen resolution</dt>
+      <dd>{{temp.display.screenResolution}}</dd>
+      <dt>Touch screen</dt>
+      <dd>{{temp.display.touchScreen | filtersName}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Hardware</span>
+    <dl>
+      <dt>CPU</dt>
+      <dd>{{temp.hardware.cpu}}</dd>
+      <dt>USB</dt>
+      <dd>{{temp.hardware.usb}}</dd>
+      <dt>Audio / headtemp jack</dt>
+      <dd>{{temp.hardware.audioJack}}</dd>
+      <dt>FM Radio</dt>
+      <dd>{{temp.hardware.fmRadio | filtersName}}</dd>
+      <dt>Accelerometer</dt>
+      <dd>{{temp.hardware.accelerometer | filtersName}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Camera</span>
+    <dl>
+      <dt>Primary</dt>
+      <dd>{{temp.camera.primary}}</dd>
+      <dt>Features</dt>
+      <dd>{{temp.camera.features.join(', ')}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Additional Features</span>
+    <dd>{{temp.additionalFeatures}}</dd>
+  </li>
+</ul>
+
    <hr />
 </div>
