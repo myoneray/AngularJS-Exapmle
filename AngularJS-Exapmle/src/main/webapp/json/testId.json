@@ -48,7 +48,10 @@
     }, 
     "id": "nexus-s", 
     "images": [
-        "img/test.gif"
+        "img/1-1.gif",
+          "img/2-2.jpg",
+            "img/3-3.gif",
+              "img/4-4.gif"
     ], 
     "name": "Nexus S", 
     "sizeAndWeight": {

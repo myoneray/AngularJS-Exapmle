@@ -17,8 +17,12 @@ testControllers.controller('detailCtrl', [
 		'$http',
 		function($scope, $routeParams, $http) {
 			console.log(" $routeParams.phoneId" + $routeParams.id);
-			$http.get('json/' + $routeParams.id+ '.json').success(
+			$http.get('json/' + $routeParams.id + '.json').success(
 					function(data) {
 						$scope.temp = data;
+						$scope.mainImageUrl = data.images[0];
 					});
+			$scope.setImage = function(imageUrl) {
+				$scope.mainImageUrl = imageUrl;
+			}
 		} ]);
