@@ -1,5 +1,35 @@
 <div class="container">
  <hr />
- <h3>当前传递的参数：{{tel}}</h3>
+ 详情
  <hr />
+ <p>{{temp.description}}</p>
+
+ <ul class="temp-thumbs">
+  <li ng-repeat="img in temp.images"><img ng-src="{{img}}"></li>
+ </ul>
+
+ <ul class="specs">
+  <li><span>Availability and Networks</span>
+   <dl>
+    <dt>Availability</dt>
+    <dd ng-repeat="availability in temp.availability">{{availability}}</dd>
+   </dl></li>
+  <li><span>Battery</span>
+   <dl>
+    <dt>Type</dt>
+    <dd>{{temp.battery.type}}</dd>
+    <dt>Talk Time</dt>
+    <dd>{{temp.battery.talkTime}}</dd>
+    <dt>Standby time (max)</dt>
+    <dd>{{temp.battery.standbyTime}}</dd>
+   </dl></li>
+  <li><span>Storage and Memory</span>
+   <dl>
+    <dt>RAM</dt>
+    <dd>{{temp.storage.ram}}</dd>
+    <dt>Internal Storage</dt>
+    <dd>{{temp.storage.flash}}</dd>
+   </dl></li>
+  <li>
+   <hr />
 </div>

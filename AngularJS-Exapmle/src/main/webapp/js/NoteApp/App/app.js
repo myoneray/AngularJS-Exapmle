@@ -5,7 +5,7 @@ testApp.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/list', {
 		templateUrl : 'html/index-list.html',
 		controller : 'listCtrl'
-	}).when('/detail/:tel', {
+	}).when('/detail/:id', {
 		templateUrl : 'html/index-Detail.html',
 		controller : 'detailCtrl'
 	}).otherwise({
