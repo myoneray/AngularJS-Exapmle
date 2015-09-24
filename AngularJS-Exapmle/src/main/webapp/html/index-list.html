@@ -1,0 +1,31 @@
+<hr />
+搜索:
+<input ng-model="query">
+排序:
+<select ng-model="orderProp">
+ <option value="name">姓名</option>
+ <option value="tel">电话</option>
+ <option value="add">地址</option>
+</select>
+<a href=" http://www.ituring.com.cn/article/15766">源文件参考</a>
+<hr />
+<ul>
+ <table class="table">
+  <thead>
+   <tr>
+    <th>姓名</th>
+    <th>電話</th>
+    <th>地址</th>
+    <th>圖</th>
+   </tr>
+  </thead>
+  <tr class="table table-striped" ng-repeat="data in testDatas | filter:query | orderBy:orderProp">
+   <td><a href="index.html#/detail/{{data.tel}}">{{data.name}}
+   </a></td>
+   <td>{{data.tel}}</td>
+   <td>{{data.add}}</td>
+   <td><img ng-src="{{data.imageUrl}}"></td>
+  </tr>
+ </table>
+</ul>
+<hr />
