@@ -6,17 +6,29 @@
 <!-- 指定基础URL -->
 <!-- <base href="/test"> -->
 <link rel="shortcut icon" href="favicon.ico" />
-<link rel="stylesheet" type="text/css" href="js/Plugins/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css"
+ href="js/Plugins/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/Plugins/jquery/jquery.min.js"></script>
+<script src="js/Plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="js/Plugins/angularjs/angular.min.js"></script>
 <script src="js/Plugins/angularjs/angular-route.min.js"></script>
-
 <script src="js/NoteApp/App/app.js"></script>
 <script src="js/NoteApp/App/controllers.js"></script>
 <script src="js/NoteApp/App/filter.js"></script>
 </head>
-<body class="container">
-<hr />
- <a href="#list">列表</a>
- <div ng-view></div>
+<body>
+ <div class="bs-docs-header" id="content" tabindex="-1">
+  <div class="container">
+   <h1>AngularJS-Exapmle</h1>
+   <div class="col-md-12">
+    <a href="#list" class="btn btn-mini btn-primary">列表</a> 
+    <a href="#services" class="btn btn-success btn-mini">服务</a>
+   </div>
+  </div>
+ </div>
+ <div class="container">
+  <div ng-view></div>
+ </div>
 </body>
 </html>
