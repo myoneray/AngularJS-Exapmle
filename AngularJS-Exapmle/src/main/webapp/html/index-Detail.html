@@ -13,16 +13,16 @@
  <hr />
  <div class="row">
   <div class="col-md-8 text-center">
-   <img class="img-thumbnail" style="width: 270px; height: 250px;"
+   <img class="img-thumbnail" style="width: 370px; height: 350px;"
     ng-src="{{mainImageUrl}}">
   </div>
   <div class="col-md-4 text-left">
-   <li ng-repeat="img in temp.images"><img class="img-thumbnail"
-    style="width: 100px; height: 70px; cursor: pointer;"
-    ng-src="{{img}}" ng-click="setImage(img)"></li>
+ <h4>点击图片测试"factory"</h4>
+   <hr />
+   <li ng-repeat="img in temp.images">
+   <img class="img-thumbnail" style="width: 100px; height: 70px; cursor: pointer;" ng-src="{{img}}" ng-click="setImage(img)"></li>
   </div>
  </div>
-
  <hr />
  <ul class="specs">
   <li><span>Availability and Networks</span>

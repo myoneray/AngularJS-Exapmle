@@ -1,6 +1,5 @@
 'use strict';
-var testApp = angular.module('testApp', [ 'ngRoute', 'testControllers',
-		'testFilters' ]);
+var testApp = angular.module('testApp', [ 'ngRoute', 'testControllers','testFilters' ]);
 testApp.config([ '$routeProvider', '$locationProvider',
 		function($routeProvider, $locationProvider) {
 			// 路由模式决定URL样子
